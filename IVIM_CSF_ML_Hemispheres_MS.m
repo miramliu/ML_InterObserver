@@ -1,7 +1,7 @@
 % draw hemispheres on IVIM to compare to CSF
 % draw it on mono-exp image (to minimize bias)
 
-function IVIM_CSF_ML_Hemispheres(CaseNumber,ScanName, slices, physiostate, DA_model)
+function IVIM_CSF_ML_Hemispheres_MS(CaseNumber,ScanName, slices, physiostate, DA_model)
 addpath '/Users/neuroimaging/Desktop/MR-Code/IVIM_MachineLearning'
 
 if physiostate == 'Normo'

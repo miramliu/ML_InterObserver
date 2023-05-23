@@ -1,4 +1,4 @@
-function CSF_Mask = IVIM_CSF_ROIs(varargin)
+function CSF_Mask = IVIM_CSF_ROIs_MS(varargin)
 % function to draw CSF masks and save in volume to do LOOCV against an automatic threshold 
 % 07/14/2022
 % ML
