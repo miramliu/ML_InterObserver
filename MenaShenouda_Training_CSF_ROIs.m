@@ -1,4 +1,4 @@
-function CSF_Mask = IVIM_CSF_ROIs_MS(varargin)
+function CSF_Mask = MenaShenouda_Training_CSF_ROIs(varargin)
 % function to draw CSF masks and save in volume to do LOOCV against an automatic threshold 
 % 07/14/2022
 % ML
@@ -8,7 +8,7 @@ targetpath = varargin{1}; %path to Collat folder (/Collat_1/Day1/)
 foldername = varargin{2}; % name of scan (FOLDER) ('Scan 1 Sorted')
 Slices = varargin{3}; %three slices of image (i.e number of whatever slice is chosen)
 
-savename = [targetpath, 'CSF_Mask_',foldername, '.mat']; %added 2, Feb 23rd 2023 this is to include subarachnoid space as well, not just ventricles
+savename = [targetpath, 'CSF_Mask_',foldername, '_MS.mat']; %added 2, Feb 23rd 2023 this is to include subarachnoid space as well, not just ventricles
 savebrainmask = [targetpath, 'Brain_Mask_',foldername, '.mat'];
 
 fmap = load([targetpath, foldername, '_2step.mat'], 'f');
