@@ -112,20 +112,25 @@ nm = 'Scan 53 IVIM_sorted'
 slcs = {25, 21, 19} %this is from All_IVIMvDSC
 mask = MenaShenouda_Training_CSF_ROIs(tp,nm,slcs);
 
+%{
+
 tp = '/Users/neuroimaging/Desktop/DATA/IVIM_PD/IVIM_21/Day1/'
 nm = 'Scan 34 IVIM_sorted'
 slcs = {28, 24, 20} %this is from All_IVIMvDSC
 mask = MenaShenouda_Training_CSF_ROIs(tp,nm,slcs);
+%}
 
 tp = '/Users/neuroimaging/Desktop/DATA/IVIM_PD/IVIM_23/Day1/'
 nm = 'Scan 2_sorted'
 slcs = {29, 27, 23} %this is from All_IVIMvDSC
 mask = MenaShenouda_Training_CSF_ROIs(tp,nm,slcs);
 
+%{
 tp = '/Users/neuroimaging/Desktop/DATA/IVIM_PD/IVIM_24/Day1/'
 nm = 'Scan 2_sorted'
 slcs = {23, 21, 18} %this is from All_IVIMvDSC
 mask = MenaShenouda_Training_CSF_ROIs(tp,nm,slcs);
+%}
 
 tp = '/Users/neuroimaging/Desktop/DATA/IVIM_PD/IVIM_25/Day1/'
 nm = 'Scan 4_sorted'

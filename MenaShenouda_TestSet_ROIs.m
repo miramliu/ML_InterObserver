@@ -20,7 +20,7 @@ targetpath = ['/Users/neuroimaging/Desktop/DATA/IVIM_PD/IVIM_', CaseNumber]
 IVIM_name = [targetpath,'/',Day,'/', ScanName,'_2step.mat'];
 monoexp_name = [targetpath,'/',Day,'/', ScanName,'_monoexp.mat'];
 load(monoexp_name,'Dcsf')
-%load(IVIM_name,'f','Dstar','D') 
+load(IVIM_name,'f') 
 
 [~,nx,ny] = size(f);
 %% Check does ROI mat file exist?
@@ -32,7 +32,7 @@ if ~exist([targetpath,'/',Day,'/', 'Hemisphere_ROIs_',ScanName, '_MS.mat'],'file
         slice = slices(slicenum);
         
         
-        figure, imshow(squeeze(Dcsf(slice,:,:)),[]),truesize([500 500])
+        figure, imshow(squeeze(Dcsf(slice,:,:)),[0 .008]),colorbar,truesize([500 500])
         
         disp('Draw Left hemisphere, EXCLUDING CSF')
         [LeftHem,xL,yL] = roipoly;

@@ -16,6 +16,7 @@ CSF_Mask = zeros(size(fmap.f));
 
 
 % get brain mask
+%{
 if ~exist(savebrainmask,'file')
     [imgstack,bvaluelist] = loadIVIM2022(targetpath, foldername);
     b_ind = find([bvaluelist{:}] == 1000); %this is the index for the b-value that is 778 (closest to 800 which is what is used for DTI?)
@@ -26,6 +27,7 @@ else
     fprintf('Already brainmask saved at:\n %s\n', savebrainmask)
     brainMask = load(savebrainmask,'brainMask').brainMask;
 end
+%}
 
 
 % Now draw CSF mask on segmented (brain mask) raw B0 image
@@ -61,8 +63,8 @@ for i = 1:length(Slices)
     ImageB0 = double(dicomread(fname));
     figure,
     subplot(1,3,1),imshow(ImageB0,[0 500]),
-    subplot(1,3,2), imshow(ImageB0.*squeeze(brainMask(:,:,slice)), [0 500])
-    subplot(1,3,3), imshow(ImageB0.*squeeze(brainMask(:,:,slice)).*squeeze(~CSF_Mask(slice,:,:)), [0 500])
+    subplot(1,3,2), imshow(ImageB0)%.*squeeze(brainMask(:,:,slice)), [0 500])
+    subplot(1,3,3), imshow(ImageB0.*squeeze(~CSF_Mask(slice,:,:)), [0 500]) %have removed brainmask here, june 12 2023
     pause;
 end
 
